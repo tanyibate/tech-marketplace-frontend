@@ -1,5 +1,10 @@
 import React from "react";
+import Layout from "../../components/Layout/Layout";
 
 export default function Success() {
-  return <div>Success</div>;
+  return (
+    <Layout>
+      <div>Success</div>
+    </Layout>
+  );
 }

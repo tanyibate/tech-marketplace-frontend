@@ -1,0 +1,12 @@
+@import "../colors.scss";
+
+.navbar_item {
+  font-size: 13px;
+  line-height: 25px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    color: $orange;
+  }
+}

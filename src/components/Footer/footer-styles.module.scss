@@ -1,0 +1,31 @@
+@import "../colors.scss";
+
+.footer_item {
+  color: white;
+  font-size: 13px;
+  line-height: 25px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    color: $orange;
+  }
+}
+
+.footer_text {
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: 0px;
+  font-weight: 200;
+  color: white;
+  opacity: 0.5;
+}
+
+.footer_copyright {
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: 0px;
+  font-weight: bold;
+  color: white;
+  opacity: 0.5;
+}

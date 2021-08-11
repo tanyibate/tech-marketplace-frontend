@@ -14,7 +14,7 @@ export default function Index() {
   let { path, url } = useRouteMatch();
 
   return (
-    <div>
+    <div style={{ height: "100%", width: "100%" }}>
       <Switch>
         <Route exact path={path}>
           <h3>Please select a topic.</h3>
