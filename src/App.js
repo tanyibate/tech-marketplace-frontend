@@ -9,11 +9,15 @@ import React from "react";
 
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
+import BestAudioGear from "./components/best-audio-gear/BestAudioGear";
 
 export default function App() {
   return (
     <Router>
-      <div style={{ height: "100%", width: "100%", overflow: "scroll" }}>
+      <div
+        style={{ height: "100%", width: "100%", overflow: "scroll" }}
+        className="flex flex-col items-center"
+      >
         <NavBar></NavBar>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -41,6 +45,7 @@ export default function App() {
             <Home />
           </Route>
         </Switch>
+        <BestAudioGear></BestAudioGear>
         <Footer></Footer>
       </div>
     </Router>

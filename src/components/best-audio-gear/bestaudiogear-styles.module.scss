@@ -1,0 +1,34 @@
+@import "../colors.scss";
+
+.desc_text {
+  font-weight: 200;
+  font-size: 15px;
+  line-height: 25px;
+  color: black;
+  opacity: 60%;
+}
+
+.desc_header {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38.25px;
+  letter-spacing: 1px;
+  text-align: center;
+  span {
+    color: $orange;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .desc_header {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.43px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .desc_header {
+    text-align: left;
+  }
+}

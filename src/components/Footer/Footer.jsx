@@ -14,13 +14,13 @@ export default function Footer() {
     else history.push("/");
   }
   return (
-    <div className="w-full bg-black pt-12 pb-9 px-6 tablet:px-8">
+    <div className="w-full bg-black pt-12 pb-9 px-6 tablet:px-8 flex flex-col items-center">
       <div></div>
-      <div className="w-full flex-col flex-wrap items-center">
+      <div className="w-full flex-col flex-wrap items-center desktop:max-w-content-desktop">
         <div className="flex flex-wrap flex-col desktop:flex-row items-center tablet:items-start desktop:justify-between">
           <img src={logo} alt="" className="mb-8" />
           <div
-            className="flex items-center flex-col tablet:flex-row mb-8 space-x-4"
+            className="flex items-center flex-col tablet:flex-row mb-8 tablet:space-x-4"
             style={{ maxWidth: "429px" }}
           >
             {menuOptions.map((el) => {
