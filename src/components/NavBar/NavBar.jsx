@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import hamburgerIcon from "../../assets/icons/icon-hamburger.svg";
 import logo from "../../assets/images/logo.svg";
 import cart from "../../assets/icons/icon-cart.svg";
 import styles from "./navbar-styles.module.scss";
 import { useHistory } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
   const history = useHistory();
+  useEffect(() => {
+    return history.listen((location) => {
+      window.scrollTo(0, 0);
+      console.log(`You changed the page to: ${location.pathname}`);
+    });
+  }, [history]);
   function handleClick(location) {
     if (location != "home") history.push("/" + location);
     else history.push("/");

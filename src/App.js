@@ -5,7 +5,8 @@ import User from "./pages/User";
 import Earphones from "./pages/Earphones";
 import Headphones from "./pages/Headphones";
 import Speakers from "./pages/Speakers";
-import React from "react";
+import Home from "./pages/Home";
+import React, { useEffect } from "react";
 
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
@@ -14,46 +15,37 @@ import BestAudioGear from "./components/best-audio-gear/BestAudioGear";
 export default function App() {
   return (
     <Router>
-      <div
-        style={{ height: "100%", width: "100%", overflow: "scroll" }}
-        className="flex flex-col items-center"
-      >
-        <NavBar></NavBar>
-        {/* A <Switch> looks through its children <Route>s and
+      <NavBar></NavBar>
+      {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/headphones">
-            <Headphones />
-          </Route>
-          <Route path="/speakers">
-            <Speakers />
-          </Route>
-          <Route path="/earphones">
-            <Earphones />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <User />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
+      <Switch>
+        <Route path="/headphones">
+          <Headphones />
+        </Route>
+        <Route path="/speakers">
+          <Speakers />
+        </Route>
+        <Route path="/earphones">
+          <Earphones />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/users">
+          <User />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
 
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-        <BestAudioGear></BestAudioGear>
-        <Footer></Footer>
-      </div>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+      <BestAudioGear></BestAudioGear>
+      <Footer></Footer>
     </Router>
   );
-}
-
-function Home() {
-  return <h2>Home Page</h2>;
 }
 
 function About() {

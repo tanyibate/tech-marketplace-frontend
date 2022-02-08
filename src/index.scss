@@ -4,10 +4,15 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 
+html {
+  height: 100%;
+  overflow: auto;
+}
+
 body {
   margin: 0;
   font-family: "Manrope", sans-serif;
-
+  height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -20,5 +25,7 @@ code {
 #root {
   height: 100%;
   width: 100%;
-  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
