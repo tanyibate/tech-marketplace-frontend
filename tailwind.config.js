@@ -20,6 +20,10 @@ module.exports = {
         15: "60px",
         header: "90px",
       },
+      spacing: {
+        15: "60px",
+        header: "90px",
+      },
       maxWidth: {
         "content-desktop": "1110px",
       },

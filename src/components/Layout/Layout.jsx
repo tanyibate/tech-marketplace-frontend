@@ -5,14 +5,15 @@ import classnames from "classnames";
 
 export default function Layout(props) {
   const { pathname } = useLocation();
-  const grayBackground = classnames({
+  const titleHeaderPages = ["/headphones", "/speakers", "/earphones"];
+  const classes = classnames({
     [styles.gray_background]: pathname === "/login",
-    ["justify-center"]: pathname === "/login",
+    "justify-center": pathname === "/login",
+    "pt-6 tablet:p-10": !titleHeaderPages.includes(pathname),
+    [styles.layout_padding]: titleHeaderPages.includes(pathname),
   });
   return (
-    <div
-      className={`${styles.container}  ${grayBackground} pt-6 px-6 tablet:p-10 relative`}
-    >
+    <div className={`${styles.container}  ${classes} px-6 relative`}>
       {props.children}
     </div>
   );

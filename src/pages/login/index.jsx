@@ -53,7 +53,7 @@ export default function Index() {
               <FormField label={"Email"} type={"email"}></FormField>
               <FormField label={"Password"} type={"password"}></FormField>
             </FormRow>
-            <Button {...{ type: "submit", title: "Login" }} />
+            <Button {...{ type: "submit" }}>Login</Button>
             <div className="flex items-center mb-8">
               <hr className="flex-1 border-silver" />
               <span className="flex-1 text-center font-bold text-silver">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import hamburgerIcon from "../../assets/icons/icon-hamburger.svg";
 import logo from "../../assets/images/logo.svg";
 import cart from "../../assets/icons/icon-cart.svg";
@@ -12,6 +12,7 @@ export default function NavBar() {
   const history = useHistory();
   const { pathname } = useLocation();
   const titleHeaderPages = ["/headphones", "/speakers", "/earphones"];
+  const ref = useRef(null);
 
   useEffect(() => {
     return history.listen((location) => {
@@ -36,7 +37,7 @@ export default function NavBar() {
   }
   const menuOptions = ["Home", "Headphones", "Speakers", "Earphones"];
   const classes = classNames({
-    "bg-black": !pathname === "/" || offset > 90,
+    "bg-black": pathname !== "/" || offset > 90,
   });
   return (
     <div

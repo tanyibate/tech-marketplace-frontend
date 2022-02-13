@@ -6,14 +6,15 @@ export default function Button({
   clickHandler,
   fontColor,
   backgroundColor,
+  children,
 }) {
   return (
     <button
       type={type}
-      className="bg-orange text-white text uppercase px-7 py-3 font-bold text-sm"
+      className="bg-orange text-white text uppercase px-7 py-3 font-bold text-sm tracking-widest"
       onClick={clickHandler}
     >
-      {title}
+      {children}
     </button>
   );
 }
