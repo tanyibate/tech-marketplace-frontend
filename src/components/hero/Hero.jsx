@@ -7,14 +7,24 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <div className={`w-screen h-full ${styles.negative_margin}`}>
-      <img src={headerMobile} alt="" className="tablet:hidden w-full" />
+    <div
+      className={`w-screen h-full ${styles.negative_margin} overflow-visible`}
+    >
+      <img
+        src={headerMobile}
+        alt=""
+        className="tablet:hidden w-full max-h-screen"
+      />
       <img
         src={headerTablet}
         alt=""
-        className="hidden tablet:block desktop:hidden w-full"
+        className="hidden tablet:block desktop:hidden w-full max-h-screen"
       />
-      <img src={headerDesktop} alt="" className="hidden desktop:block w-full" />
+      <img
+        src={headerDesktop}
+        alt=""
+        className="hidden desktop:block w-full max-h-screen"
+      />
       <div className="w-full h-full absolute top-0 right-0 pt-header flex justify-center items-center desktop:max-w-content-desktop desktop:justify-start desktop:right-1/2 transform desktop:translate-x-1/2">
         <div className={styles.product_details}>
           <p className={styles.new_product}>NEW PRODUCT</p>

@@ -1,10 +1,11 @@
 .negative_margin {
   position: relative;
   bottom: 90px;
-  margin-bottom: -60px;
+  margin-bottom: -30px;
 }
 
 .product_details {
+  overflow: visible;
   padding: 0 2%;
   width: 328px;
   text-align: center;
@@ -68,7 +69,20 @@
 }
 
 @for $i from 1 through 10 {
-  .product_details img:nth-child(#{$i}n) {
+  .product_details :nth-child(#{$i}n) {
+    position: relative;
+    opacity: 0;
+    animation: bringin 500ms linear forwards;
     animation-delay: #{$i * 0.5}s;
+  }
+}
+
+@keyframes bringin {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

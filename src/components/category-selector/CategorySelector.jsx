@@ -1,32 +1,22 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
+import forwardChevron from "../../assets/icons/forward-chevron.png";
 
-export default function CategorySelector({
-  mobileImage,
-  tabletImage,
-  desktopImage,
-  categoryName,
-}) {
-  const isTablet = useMediaQuery({
-    query: "(min-width: 768px)",
-  });
-  const isDesktop = useMediaQuery({
-    query: "(min-width: 1440px)",
-  });
-
-  const returnImage = () => {
-    if (isDesktop) return desktopImage;
-    else if (isTablet) return tabletImage;
-    return mobileImage;
-  };
+export default function CategorySelector({ image, name }) {
   return (
-    <div className="rounded bg-white-smoke w-full h-40 desktop:h-52 relative">
+    <div className="rounded-lg bg-white-smoke w-full h-40 desktop:h-52 relative cursor-pointer">
       <img
-        src={returnImage()}
+        src={image}
         alt="category image"
-        className="absolute top-0 right-1/2 transform translate-x-1/2 -translate-y-1/2"
+        className="absolute top-0 right-1/2 transform translate-x-1/2  h-32 desktop:h-40 -translate-y-1/3"
       />
-      <div></div>
+      <div className="absolute bottom-6 right-1/2 transform translate-x-1/2 flex flex-col items-center">
+        <h5 className="font-bold text-lg mb-4">{name}</h5>
+        <div className="flex items-center">
+          <p className="text-xs mr-2 font-bold hover:text-orange">SHOP</p>
+          <img src={forwardChevron} alt="forward chevron" />
+        </div>
+      </div>
     </div>
   );
 }

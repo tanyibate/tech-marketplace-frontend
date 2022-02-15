@@ -80,7 +80,7 @@ export default function NavBar() {
           <img
             src={user.profilePictureUrl}
             alt="profile picture"
-            className="h-6 w-6 tablet:h-12 tablet:w-12 rounded-full"
+            className="h-6 w-6 rounded-full"
           />
         </div>
       </div>

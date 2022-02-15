@@ -13,7 +13,9 @@ export default function Layout(props) {
     [styles.layout_padding]: titleHeaderPages.includes(pathname),
   });
   return (
-    <div className={`${styles.container}  ${classes} px-6 relative`}>
+    <div
+      className={`${styles.container}  ${classes} px-6 relative max-w-content-desktop desktop:px-0`}
+    >
       {props.children}
     </div>
   );
