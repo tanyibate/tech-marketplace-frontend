@@ -73,7 +73,7 @@
     position: relative;
     opacity: 0;
     animation: bringin 500ms linear forwards;
-    animation-delay: #{$i * 0.5}s;
+    animation-delay: #{$i * 0.35}s;
   }
 }
 
