@@ -6,8 +6,14 @@ import headphonesCategoryImage from "../../assets/images/image-headphones.png";
 import speakersCategoryImage from "../../assets/images/image-speakers.png";
 import CategorySelector from "../../components/category-selector/CategorySelector";
 import zx9SpeakersHomeDesktop from "../../assets/images/home/desktop/image-speaker-zx9.png";
+import zx7SpeakerHomeDesktop from "../../assets/images/home/desktop/image-speaker-zx7.jpg";
+import zx7SpeakerHomeTablet from "../../assets/images/home/tablet/image-speaker-zx7.jpg";
+import zx7SpeakerHomeMobile from "../../assets/images/home/mobile/image-speaker-zx7.jpg";
+import { useMediaQuery } from "react-responsive";
+
 import styles from "./home-styles.module.scss";
 import HomePageTopProduct from "../../components/home-page-top-product/HomePageTopProduct";
+import HomePageMiddleProduct from "../../components/home-page-middle-product/HomePageMiddleProduct";
 
 export default function Home() {
   const categories = [
@@ -24,10 +30,18 @@ export default function Home() {
       image: earphonesCategoryImage,
     },
   ];
+  const isTablet = useMediaQuery({ query: "(min-width: 768px)" });
+  const isDesktop = useMediaQuery({ query: "(min-width: 1440px)" });
+
+  const getMiddleProductImage = () => {
+    if (isDesktop) return zx7SpeakerHomeDesktop;
+    if (isTablet) return zx7SpeakerHomeTablet;
+    return zx7SpeakerHomeMobile;
+  };
   return (
     <Layout>
       <Hero />
-      <div className="grid grid-cols-1 gap-y-16 w-full tablet:grid-cols-3 gap-x-10">
+      <div className="grid grid-cols-1 gap-y-16 w-full tablet:grid-cols-3 gap-x-10 mt-20 desktop:mt-24 mb-24 desktop:mb-12">
         {categories.map(({ name, image }) => (
           <CategorySelector image={image} name={name} />
         ))}
@@ -39,6 +53,9 @@ export default function Home() {
           description:
             "Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.",
         }}
+      />
+      <HomePageMiddleProduct
+        {...{ image: getMiddleProductImage(), name: "ZX7 SPEAKER" }}
       />
     </Layout>
   );

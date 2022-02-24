@@ -10,7 +10,7 @@ export default function BestAudioGear() {
   return (
     <>
       {pathname !== "/login" && (
-        <div className="desktop:flex flex-row-reverse px-6 tablet:px-10 desktop:px-0 mb-40 desktop:max-w-content-desktop items-center">
+        <div className="desktop:flex flex-row-reverse px-6 tablet:px-10 desktop:px-0 mb-40 tablet:max-w-content-desktop items-center">
           <div className="desktop:w-1/2 w-full">
             <img
               src={bestGearImageDesktop}

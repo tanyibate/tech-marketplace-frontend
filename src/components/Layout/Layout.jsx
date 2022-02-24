@@ -14,7 +14,7 @@ export default function Layout(props) {
   });
   return (
     <div
-      className={`${styles.container}  ${classes} px-6 relative max-w-content-desktop desktop:px-0`}
+      className={`${styles.container}  ${classes} px-6 tablet:px-10 relative max-w-content-desktop desktop:px-0`}
     >
       {props.children}
     </div>

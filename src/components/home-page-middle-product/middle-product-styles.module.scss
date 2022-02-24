@@ -1,0 +1,26 @@
+.container {
+  height: 320px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  padding: 10%;
+  justify-content: flex-start;
+  align-items: center;
+
+  img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .content {
+    z-index: 20;
+    h3 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 38px;
+      letter-spacing: 2px;
+    }
+  }
+}
