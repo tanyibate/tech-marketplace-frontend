@@ -9,7 +9,7 @@ export default function Layout(props) {
   const classes = classnames({
     [styles.gray_background]: pathname === "/login",
     "justify-center": pathname === "/login",
-    "pt-6 tablet:p-10": !titleHeaderPages.includes(pathname),
+    //"pt-6 tablet:p-10": !titleHeaderPages.includes(pathname),
     [styles.layout_padding]: titleHeaderPages.includes(pathname),
   });
   return (

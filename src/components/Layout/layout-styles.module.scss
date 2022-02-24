@@ -1,9 +1,12 @@
 .container {
   width: 100%;
-  padding-top: 90px;
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.regular_padding {
+  padding-top: 90px;
 }
 
 .header {

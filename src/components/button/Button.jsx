@@ -11,7 +11,7 @@ export default function Button({
   return (
     <button
       type={type}
-      className="bg-orange text-white text uppercase px-7 py-3 font-bold text-sm tracking-widest"
+      className={`bg-${backgroundColor} text-${fontColor} text uppercase px-7 py-3 font-bold text-sm tracking-widest`}
       onClick={clickHandler}
     >
       {children}

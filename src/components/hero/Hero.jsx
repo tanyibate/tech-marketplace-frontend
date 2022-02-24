@@ -7,9 +7,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <div
-      className={`w-screen h-full ${styles.negative_margin} overflow-visible`}
-    >
+    <div className={`w-screen relative overflow-visible`}>
       <img
         src={headerMobile}
         alt=""
@@ -33,7 +31,9 @@ export default function Hero() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Button>See product</Button>
+          <Button backgroundColor="orange" fontColor="white">
+            See product
+          </Button>
         </div>
       </div>
     </div>

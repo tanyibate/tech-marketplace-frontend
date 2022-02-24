@@ -5,7 +5,7 @@ import User from "./pages/User";
 import Earphones from "./pages/Earphones";
 import Headphones from "./pages/Headphones";
 import Speakers from "./pages/Speakers";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import React, { useEffect } from "react";
 
 import NavBar from "./components/NavBar/NavBar";
