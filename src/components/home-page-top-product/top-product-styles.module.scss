@@ -18,6 +18,7 @@
     height: 90%;
     top: -15%;
     position: absolute;
+    object-fit: cover;
   }
   .top_image_container_content {
     text-align: center;
@@ -51,7 +52,6 @@
   @media only screen and (min-width: 768px) {
     .product_image {
       height: 75%;
-      width: auto;
       position: absolute;
       left: 10%;
       bottom: -10px;

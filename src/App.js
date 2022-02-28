@@ -5,6 +5,7 @@ import User from "./pages/User";
 import Earphones from "./pages/Earphones";
 import Headphones from "./pages/Headphones";
 import Speakers from "./pages/Speakers";
+import CategoryPage from "./pages/category-page/CategoryPage";
 import Home from "./pages/Home/Home";
 import React, { useEffect } from "react";
 
@@ -20,7 +21,7 @@ export default function App() {
             renders the first one that matches the current URL. */}
       <Switch>
         <Route path="/headphones">
-          <Headphones />
+          <CategoryPage />
         </Route>
         <Route path="/speakers">
           <Speakers />

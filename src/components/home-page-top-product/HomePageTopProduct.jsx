@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../button/Button";
 import styles from "./top-product-styles.module.scss";
-import rings from "../../assets/images/home/desktop/pattern-circles.svg";
+import rings from "../../assets/images/home/desktop/pattern-circles.png";
 
 export default function HomePageTopProduct({ image, name, url, description }) {
   return (

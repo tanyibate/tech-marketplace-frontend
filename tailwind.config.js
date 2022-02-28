@@ -15,6 +15,13 @@ module.exports = {
       doctor: "#fafafa",
       silver: "#cfcfcf",
     },
+    gridAutoColumns: {
+      fr: "1fr",
+    },
+    gridAutoRows: {
+      fr: "1fr",
+      auto: "auto",
+    },
     extend: {
       height: {
         15: "60px",
@@ -26,6 +33,9 @@ module.exports = {
       },
       maxWidth: {
         "content-desktop": "1110px",
+      },
+      screens: {
+        xs: "400px",
       },
     },
     screens: {
