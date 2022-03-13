@@ -16,7 +16,6 @@
     line-height: 19px;
     letter-spacing: 10px;
     color: white;
-    opacity: 0.5;
   }
 
   .product_name {
@@ -66,6 +65,14 @@
   }
 }
 
+.arrow {
+  width: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  animation: bounce 750ms infinite, disappear 2s linear forwards;
+}
+
 @for $i from 1 through 10 {
   .product_details :nth-child(#{$i}n) {
     position: relative;
@@ -82,5 +89,31 @@
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-25%) translateX(50%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0) translateX(50%);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }

@@ -3,9 +3,14 @@ import headerTablet from "../../assets/images/home/tablet/image-header.jpg";
 import headerDesktop from "../../assets/images/home/desktop/image-hero.jpg";
 import Button from "../button/Button";
 import styles from "./hero.styles.module.scss";
-import React from "react";
+import React, { useState } from "react";
+import arrowDown from "../../assets/icons/arrow-down.png";
 
 export default function Hero() {
+  const [showArrow, setShowArrow] = useState(false);
+  setTimeout(function () {
+    setShowArrow(true);
+  }, 2000);
   return (
     <div className={`w-screen relative overflow-visible`}>
       <img
@@ -36,6 +41,9 @@ export default function Hero() {
           </Button>
         </div>
       </div>
+      {showArrow && (
+        <img src={arrowDown} alt="arrow down" className={styles.arrow} />
+      )}
     </div>
   );
 }

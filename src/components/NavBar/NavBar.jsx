@@ -6,6 +6,10 @@ import styles from "./navbar-styles.module.scss";
 import { useHistory, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import classNames from "classnames";
+import BurgerMenu from "../burger-menu/BurgerMenu";
+import { useParams } from "react-router-dom";
+import { getProductsByCategory } from "../../utils/productApi";
+import { useMutation, useQueryClient } from "react-query";
 
 export default function NavBar() {
   const user = useSelector((state) => state.user);
@@ -13,6 +17,16 @@ export default function NavBar() {
   const { pathname } = useLocation();
   const titleHeaderPages = ["/headphones", "/speakers", "/earphones"];
   const ref = useRef(null);
+  const [burgerMenuActive, setBurgerMenuActive] = useState(false);
+  const [nextPage, setNextPage] = useState("");
+  const params = useParams();
+  const getProductsByCategoryWithParams = async () => {
+    await getProductsByCategory(nextPage);
+  };
+
+  const queryClient = useQueryClient();
+  const openBurgerMenu = () => setBurgerMenuActive(true);
+  const closeBurgerMenu = () => setBurgerMenuActive(false);
 
   useEffect(() => {
     return history.listen((location) => {
@@ -32,25 +46,29 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   function handleClick(location) {
-    if (location != "home") history.push("/" + location);
-    else history.push("/");
+    if (location === "home") history.push("/");
+    else {
+      history.push("/category" + "/" + location);
+      queryClient.invalidateQueries("categoryproductdata");
+    }
   }
   const menuOptions = ["Home", "Headphones", "Speakers", "Earphones"];
   const classes = classNames({
     "bg-black": pathname !== "/" || offset > 90,
   });
   return (
-    <div
+    <header
       className={
         "bg-transparent fixed text-white w-full flex justify-center items-center z-30 flex-col " +
         classes
       }
     >
-      <div className="w-full flex justify-between items-center desktop:max-w-content-desktop h-header p-6 tablet:p-10 border-b border-white border-opacity-10	 border-solid">
+      <nav className="w-full flex justify-between items-center desktop:max-w-content-desktop h-header p-6 tablet:p-10 border-b border-white border-opacity-10	 border-solid">
         <img
           src={hamburgerIcon}
           alt=""
           className="cursor-pointer desktop:hidden"
+          onClick={openBurgerMenu}
         />
         <img src={logo} alt="" className="cursor-pointer" />
 
@@ -83,12 +101,13 @@ export default function NavBar() {
             className="h-6 w-6 rounded-full"
           />
         </div>
-      </div>
+      </nav>
       {titleHeaderPages.includes(pathname) && (
-        <div className="h-24 tablet:h-48 flex justify-center items-center">
+        <div className="h-24  flex justify-center items-center">
           <h1 className="text-3xl font-bold uppercase">{pathname.slice(1)}</h1>
         </div>
       )}
-    </div>
+      {burgerMenuActive && <BurgerMenu close={closeBurgerMenu} />}
+    </header>
   );
 }

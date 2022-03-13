@@ -6,9 +6,17 @@
   width: 200px;
   background-color: black;
   color: white;
-  padding: 5%;
+  padding-top: 40px;
+  padding-left: 20px;
+  animation: bringinmenu 500ms linear forwards;
+  display: flex;
+  flex-direction: column;
   row-gap: 20px;
-  animation: brininmenu 500ms linear forwards;
+  z-index: 100;
+}
+
+.pulloutmenu {
+  animation: pulloutmenu 500ms linear forwards;
 }
 
 @keyframes bringinmenu {
@@ -17,5 +25,14 @@
   }
   100% {
     left: 0;
+  }
+}
+
+@keyframes pulloutmenu {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: -200px;
   }
 }

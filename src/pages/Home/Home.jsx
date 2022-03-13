@@ -23,15 +23,15 @@ import HomePageBottomProduct from "../../components/home-page-bottom-product/Hom
 export default function Home() {
   const categories = [
     {
-      name: "Headphones",
+      name: "headphones",
       image: headphonesCategoryImage,
     },
     {
-      name: "Speakers",
+      name: "speakers",
       image: speakersCategoryImage,
     },
     {
-      name: "Earphones",
+      name: "earphones",
       image: earphonesCategoryImage,
     },
   ];
@@ -54,7 +54,7 @@ export default function Home() {
       <Hero />
       <div className="grid grid-cols-1 gap-y-16 w-full tablet:grid-cols-3 gap-x-10 mt-20 desktop:mt-24 mb-24 desktop:mb-12">
         {categories.map(({ name, image }) => (
-          <CategorySelector image={image} name={name} />
+          <CategorySelector image={image} name={name} key={name} />
         ))}
       </div>
       <div className="w-full space-y-10 mb-12">

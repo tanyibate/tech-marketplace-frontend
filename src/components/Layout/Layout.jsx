@@ -10,13 +10,14 @@ export default function Layout(props) {
     [styles.gray_background]: pathname === "/login",
     "justify-center": pathname === "/login",
     //"pt-6 tablet:p-10": !titleHeaderPages.includes(pathname),
+    [styles.regular_padding]: !titleHeaderPages.includes(pathname) && pathname !== '/',
     [styles.layout_padding]: titleHeaderPages.includes(pathname),
   });
   return (
-    <div
+    <section
       className={`${styles.container}  ${classes} px-6 tablet:px-10 relative max-w-content-desktop desktop:px-0`}
     >
       {props.children}
-    </div>
+    </section>
   );
 }

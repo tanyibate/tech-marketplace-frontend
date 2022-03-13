@@ -11,12 +11,15 @@ export default function CategoryPageProduct({
   reverse,
 }) {
   const imageSection = (
-    <div className="flex-1">
+    <div className="flex-1" key="image section">
       <img src={image} alt={name} className="w-full rounded-lg" />
     </div>
   );
   const productDetails = (
-    <div className="flex flex-col justify-center items-center lg:items-start flex-1">
+    <div
+      className="flex flex-col justify-center items-center lg:items-start flex-1"
+      key="product details"
+    >
       <div
         className={`flex flex-col justify-center items-center lg:items-start w-full ${
           reverse ? "lg:pr-16" : "lg:pl-16"
