@@ -44,6 +44,7 @@ export default function CategoryPage() {
                   newProduct: product.new,
                   reverse,
                   key: product.name,
+                  slug: product.slug,
                 }}
               />
             );

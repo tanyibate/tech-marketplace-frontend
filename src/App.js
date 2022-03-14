@@ -1,18 +1,15 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Login from "./pages/login";
-import User from "./pages/User";
-import Earphones from "./pages/Earphones";
-import Headphones from "./pages/Headphones";
-import Speakers from "./pages/Speakers";
 import CategoryPage from "./pages/category-page/CategoryPage";
 import Home from "./pages/Home/Home";
-import React, { useEffect } from "react";
+import React from "react";
 
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import BestAudioGear from "./components/best-audio-gear/BestAudioGear";
 import { QueryClient, QueryClientProvider } from "react-query";
+import Product from "./pages/product/Product";
 
 export default function App() {
   const queryClient = new QueryClient();
@@ -26,6 +23,9 @@ export default function App() {
         <Switch>
           <Route path="/category/:category">
             <CategoryPage />
+          </Route>
+          <Route path="/product/:slug">
+            <Product />
           </Route>
           <Route path="/login">
             <Login />

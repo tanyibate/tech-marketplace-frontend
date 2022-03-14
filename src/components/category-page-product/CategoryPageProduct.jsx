@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./category-page-product-styles.module.scss";
 import Button from "../button/Button";
-
+import { useQueryClient } from "react-query";
+import { useHistory } from "react-router-dom";
 export default function CategoryPageProduct({
   image,
   name,
@@ -9,7 +10,14 @@ export default function CategoryPageProduct({
   description,
   url,
   reverse,
+  slug,
 }) {
+  const queryClient = useQueryClient();
+  const history = useHistory();
+  const goToProduct = () => {
+    queryClient.invalidateQueries("productpagedata");
+    history.push(`/product/${slug}`);
+  };
   const imageSection = (
     <div className="flex-1" key="image section">
       <img src={image} alt={name} className="w-full rounded-lg" />
@@ -32,7 +40,11 @@ export default function CategoryPageProduct({
         )}
         <h2 className={styles.title + " mb-5"}>{name}</h2>
         <p className={styles.description + " mb-5"}>{description}</p>
-        <Button backgroundColor={"orange"} fontColor={"white"}>
+        <Button
+          backgroundColor={"orange"}
+          fontColor={"white"}
+          clickHandler={goToProduct}
+        >
           SEE PRODUCT
         </Button>
       </div>

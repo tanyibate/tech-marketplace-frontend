@@ -9,7 +9,7 @@ import classNames from "classnames";
 import BurgerMenu from "../burger-menu/BurgerMenu";
 import { useParams } from "react-router-dom";
 import { getProductsByCategory } from "../../utils/productApi";
-import { useMutation, useQueryClient } from "react-query";
+import { useQueryClient } from "react-query";
 
 export default function NavBar() {
   const user = useSelector((state) => state.user);
@@ -20,20 +20,14 @@ export default function NavBar() {
   const [burgerMenuActive, setBurgerMenuActive] = useState(false);
   const [nextPage, setNextPage] = useState("");
   const params = useParams();
-  const getProductsByCategoryWithParams = async () => {
-    await getProductsByCategory(nextPage);
-  };
 
   const queryClient = useQueryClient();
   const openBurgerMenu = () => setBurgerMenuActive(true);
   const closeBurgerMenu = () => setBurgerMenuActive(false);
 
   useEffect(() => {
-    return history.listen((location) => {
-      window.scrollTo(0, 0);
-      console.log(`You changed the page to: ${location.pathname}`);
-    });
-  }, [history]);
+    window.scrollTo(0, 0);
+  }, [pathname]);
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {

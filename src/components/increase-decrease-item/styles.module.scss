@@ -1,0 +1,25 @@
+.action {
+  font-family: Manrope;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #000000;
+  opacity: 0.25;
+  &:hover {
+    color: #d87d4a;
+    opacity: 1;
+  }
+}
+
+.text {
+  font-family: Manrope;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+}

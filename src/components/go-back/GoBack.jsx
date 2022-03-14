@@ -1,6 +1,13 @@
 import React from "react";
 import styles from "./goback-styles.module.scss";
+import { useHistory } from "react-router-dom";
 
 export default function GoBack() {
-  return <p className={styles.back}>Go Back</p>;
+  const history = useHistory();
+  const goBack = () => history.goBack();
+  return (
+    <p className={styles.back} onClick={goBack}>
+      Go Back
+    </p>
+  );
 }
