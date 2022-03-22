@@ -17,12 +17,12 @@ export default function BurgerMenu({ close }) {
   return (
     <aside className={classes} onAnimationEnd={closeMenu}>
       {menuOptions.map((option) => (
-        <a
+        <button
           className="text-white hover:text-orange focus:text-orange font-bold cursor-pointer"
           key={`burger_menu_${option}`}
         >
           {option}
-        </a>
+        </button>
       ))}
       <span
         className="absolute right-2 top-2 cursor-pointer"

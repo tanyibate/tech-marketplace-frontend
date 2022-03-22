@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./pages/login";
 import CategoryPage from "./pages/category-page/CategoryPage";
 import Home from "./pages/Home/Home";
@@ -39,8 +39,4 @@ export default function App() {
       </Router>
     </QueryClientProvider>
   );
-}
-
-function About() {
-  return <h2>About</h2>;
 }

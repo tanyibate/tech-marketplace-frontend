@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import bestGearImageDesktop from "../../assets/images/desktop/image-best-gear-desktop.jpg";
 import bestGearImageTablet from "../../assets/images/tablet/image-best-gear-tablet.jpg";
 import bestGearImageMobile from "../../assets/images/mobile/image-best-gear-mobile.jpg";

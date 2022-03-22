@@ -13,7 +13,7 @@ export default function Success() {
         console.log(res.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [dispatch]);
   return (
     <Layout>
       <div>Success</div>

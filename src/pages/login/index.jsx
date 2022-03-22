@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-  useRouteMatch,
-} from "react-router-dom";
+import { Switch, Route, useRouteMatch } from "react-router-dom";
 import Form from "../../components/form/Form";
 import Layout from "../../components/Layout/Layout";
 import Error from "./error";
@@ -19,13 +12,12 @@ import googleIcon from "../../assets/icons/google_icon.png";
 import facebookIcon from "../../assets/icons/facebook_icon.png";
 import appleIcon from "../../assets/icons/apple_icon.png";
 import { login } from "../../store/actions/loginActions";
-import { useSelector, useDispatch } from "react-redux";
-import { redirectToGoogleLogin } from "../../utils/userMethods";
+import { useDispatch } from "react-redux";
 import Button from "../../components/button/Button";
 
 export default function Index() {
   const dispatch = useDispatch();
-  let { path, url } = useRouteMatch();
+  let { path } = useRouteMatch();
   const {
     register,
     handleSubmit,

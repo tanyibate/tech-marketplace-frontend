@@ -1,5 +1,4 @@
 import React from "react";
-import { useMediaQuery } from "react-responsive";
 import { useHistory } from "react-router-dom";
 
 import forwardChevron from "../../assets/icons/forward-chevron.png";
@@ -14,7 +13,7 @@ export default function CategorySelector({ image, name }) {
     >
       <img
         src={image}
-        alt="category image"
+        alt="category"
         className="absolute top-0 right-1/2 transform translate-x-1/2  h-32 desktop:h-44 -translate-y-1/3"
       />
       <div className="absolute bottom-6 right-1/2 transform translate-x-1/2 flex flex-col items-center">

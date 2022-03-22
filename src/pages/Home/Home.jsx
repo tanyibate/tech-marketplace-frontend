@@ -15,7 +15,6 @@ import yx1EarphonesHomeMobile from "../../assets/images/home/mobile/image-earpho
 
 import { useMediaQuery } from "react-responsive";
 
-import styles from "./home-styles.module.scss";
 import HomePageTopProduct from "../../components/home-page-top-product/HomePageTopProduct";
 import HomePageMiddleProduct from "../../components/home-page-middle-product/HomePageMiddleProduct";
 import HomePageBottomProduct from "../../components/home-page-bottom-product/HomePageBottomProduct";

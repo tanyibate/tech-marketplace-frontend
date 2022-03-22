@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import hamburgerIcon from "../../assets/icons/icon-hamburger.svg";
 import logo from "../../assets/images/logo.svg";
 import cart from "../../assets/icons/icon-cart.svg";
@@ -7,8 +7,6 @@ import { useHistory, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import classNames from "classnames";
 import BurgerMenu from "../burger-menu/BurgerMenu";
-import { useParams } from "react-router-dom";
-import { getProductsByCategory } from "../../utils/productApi";
 import { useQueryClient } from "react-query";
 
 export default function NavBar() {
@@ -16,10 +14,7 @@ export default function NavBar() {
   const history = useHistory();
   const { pathname } = useLocation();
   const titleHeaderPages = ["/headphones", "/speakers", "/earphones"];
-  const ref = useRef(null);
   const [burgerMenuActive, setBurgerMenuActive] = useState(false);
-  const [nextPage, setNextPage] = useState("");
-  const params = useParams();
 
   const queryClient = useQueryClient();
   const openBurgerMenu = () => setBurgerMenuActive(true);
@@ -42,7 +37,7 @@ export default function NavBar() {
   function handleClick(location) {
     if (location === "home") history.push("/");
     else {
-      history.push("/category" + "/" + location);
+      history.push(`/category/${location}`);
       queryClient.invalidateQueries("categoryproductdata");
     }
   }
@@ -91,7 +86,7 @@ export default function NavBar() {
           <img src={cart} alt="" className="cursor-pointer h-6" />
           <img
             src={user.profilePictureUrl}
-            alt="profile picture"
+            alt="profile"
             className="h-6 w-6 rounded-full"
           />
         </div>

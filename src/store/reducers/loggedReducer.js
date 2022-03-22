@@ -1,4 +1,4 @@
-export default (state = false, action) => {
+const loggedReducer = (state = false, action) => {
   switch (action.type) {
     case "SIGNIN":
       return true;
@@ -8,3 +8,5 @@ export default (state = false, action) => {
       return state;
   }
 };
+
+export default loggedReducer;

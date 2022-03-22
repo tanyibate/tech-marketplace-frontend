@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
-import classnames from "classnames";
 import { FormContext } from "./Form";
 
 export default function FormField({ label, type, validation, width }) {
-  const classes = classnames({});
-  const { register, errors } = useContext(FormContext);
-  const error = errors[label];
+  const { register /*errors*/ } = useContext(FormContext);
+  //const error = errors[label];
 
   return (
     <div className="py-7 relative w-full">
