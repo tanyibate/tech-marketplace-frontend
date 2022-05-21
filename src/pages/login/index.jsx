@@ -60,8 +60,7 @@ export default function Index() {
                   providerImage: googleIcon,
                   backgroundColourHexCode: "#ffffff",
                   providerFunction: () =>
-                    (window.location.href =
-                      "http://localhost:5000/api/v1/login/google"),
+                    (window.location.href = `${process.env.REACT_APP_BACKEND_API_URL}${process.env.REACT_APP_GOOGLE_LOGIN_ENDPOINT}`),
                 }}
               />
               <LoginWithProvider
