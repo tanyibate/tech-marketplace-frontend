@@ -2,7 +2,7 @@ import React from "react";
 import GoBack from "../../components/go-back/GoBack";
 import Layout from "../../components/Layout/Layout";
 import styles from "./product-styles.module.scss";
-import { useQuery, useQueryClient } from "react-query";
+import { useQuery } from "react-query";
 import { useMediaQuery } from "react-responsive";
 import { getProductBySlug } from "../../utils/productApi";
 
@@ -14,11 +14,6 @@ export default function Product() {
   const getProductBySlugWithParams = async () => {
     return await getProductBySlug(getLastItem(window.location.pathname));
   };
-
-  // Queries
-  const queryClient = useQueryClient();
-
-  queryClient.invalidateQueries("productpagedata");
 
   const { data: productData, status } = useQuery(
     "productpagedata",
