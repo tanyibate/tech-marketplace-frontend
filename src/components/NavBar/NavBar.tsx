@@ -8,12 +8,17 @@ import { useSelector } from "react-redux";
 import classNames from "classnames";
 import BurgerMenu from "../burger-menu/BurgerMenu";
 import { useQueryClient } from "react-query";
+import { RootState } from "../../store/reducers";
 
 export default function NavBar() {
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state: RootState) => state.user);
   const history = useHistory();
   const { pathname } = useLocation();
-  const titleHeaderPages = ["/headphones", "/speakers", "/earphones"];
+  const titleHeaderPages = [
+    "/category/headphones",
+    "/category/speakers",
+    "/category/earphones",
+  ];
   const [burgerMenuActive, setBurgerMenuActive] = useState(false);
 
   const queryClient = useQueryClient();
@@ -93,7 +98,7 @@ export default function NavBar() {
       </nav>
       {titleHeaderPages.includes(pathname) && (
         <div className="h-24  flex justify-center items-center">
-          <h1 className="text-3xl font-bold uppercase">{pathname.slice(1)}</h1>
+          <h1 className="text-3xl font-bold uppercase">{pathname.slice(10)}</h1>
         </div>
       )}
       {burgerMenuActive && <BurgerMenu close={closeBurgerMenu} />}

@@ -31,7 +31,7 @@ export default function Index() {
   return (
     <Switch>
       <Route exact path={path}>
-        <Layout>
+        <Layout login={true}>
           <Form
             submit={handleSubmit(onSubmit)}
             errors={errors}
@@ -45,7 +45,15 @@ export default function Index() {
               <FormField label={"Email"} type={"email"}></FormField>
               <FormField label={"Password"} type={"password"}></FormField>
             </FormRow>
-            <Button {...{ type: "submit" }}>Login</Button>
+            <Button
+              {...{
+                type: "submit",
+                backgroundColor: "orange",
+                fontColor: "white",
+              }}
+            >
+              Login
+            </Button>
             <div className="flex items-center mb-8">
               <hr className="flex-1 border-silver" />
               <span className="flex-1 text-center font-bold text-silver">
@@ -69,6 +77,7 @@ export default function Index() {
                   providerImage: facebookIcon,
                   backgroundColourHexCode: "#1877f2",
                   fontColor: "#ffffff",
+                  providerFunction: () => null,
                 }}
               />
               <LoginWithProvider
@@ -77,6 +86,7 @@ export default function Index() {
                   providerImage: appleIcon,
                   backgroundColourHexCode: "#000000",
                   fontColor: "#ffffff",
+                  providerFunction: () => null,
                 }}
               />
             </div>

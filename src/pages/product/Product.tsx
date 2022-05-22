@@ -2,7 +2,7 @@ import React from "react";
 import GoBack from "../../components/go-back/GoBack";
 import Layout from "../../components/Layout/Layout";
 import styles from "./product-styles.module.scss";
-import { useQuery } from "react-query";
+import { useQuery, useQueryClient } from "react-query";
 import { useMediaQuery } from "react-responsive";
 import { getProductBySlug } from "../../utils/productApi";
 
@@ -16,6 +16,10 @@ export default function Product() {
   };
 
   // Queries
+  const queryClient = useQueryClient();
+
+  queryClient.invalidateQueries("productpagedata");
+
   const { data: productData, status } = useQuery(
     "productpagedata",
     getProductBySlugWithParams
@@ -26,7 +30,7 @@ export default function Product() {
     return images.mobile;
   };
   return (
-    <Layout>
+    <Layout login={false}>
       <div className="w-full py-16">
         <GoBack />
         {status === "loading" && <div>Loading ... </div>}
@@ -41,6 +45,7 @@ export default function Product() {
                 }
                 alt=""
                 className="w-full tablet:w-2/5 lg:w-1/2 rounded-xl"
+                onClick={() => console.log(productData.data)}
               />
               <div className="w-full tablet:w-3/5 lg:w-1/2 tablet:pl-24 lg:pl-28">
                 {productData.data.new && (
@@ -50,13 +55,23 @@ export default function Product() {
                 <p className={styles.text}>{productData.data.description}</p>
               </div>
             </div>
-            <div className="w-full lg:flex">
-              <div className="w-full lg:w-2/3 lg:pr-16">
+            <div className="w-full flex flex-col lg:flex-row space-y-8 lg:space-y-0">
+              <div className="w-full lg:w-2/3  lg:pr-20 space-y-4">
                 <h3 className={styles.secondary_title}>FEATURES</h3>
                 <p className={styles.text}>{productData.data.features}</p>
               </div>
-              <div className="w-full lg:w-1/3">
+              <div className="w-full lg:w-1/3 space-y-4">
                 <h3 className={styles.secondary_title}>IN THE BOX</h3>
+                {productData.data.accessories.map((accessory) => {
+                  return (
+                    <div className={styles.accessory} key={accessory.item}>
+                      <span
+                        className={styles.quantity}
+                      >{`${accessory.quantity}x`}</span>
+                      <span className={styles.item}>{accessory.item}</span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </>

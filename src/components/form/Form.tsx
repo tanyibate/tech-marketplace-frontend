@@ -1,5 +1,13 @@
 import React, { createContext } from "react";
-export const FormContext = createContext();
+export type FormContextProps = {
+  register: any;
+  errors: any;
+};
+const initialValues: FormContextProps = {
+  register: null,
+  errors: null,
+};
+export const FormContext = createContext(initialValues);
 
 export default function Form({ submit, register, errors, children }) {
   const formHandlers = { register, errors };

@@ -8,7 +8,6 @@ export default function CategoryPageProduct({
   name,
   newProduct,
   description,
-  url,
   reverse,
   slug,
 }) {

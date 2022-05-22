@@ -1,7 +1,12 @@
 import React, { useContext } from "react";
 import { FormContext } from "./Form";
 
-export default function FormField({ label, type, validation, width }) {
+export type FormFieldProps = {
+  label: string;
+  type: string;
+  validation?: any;
+};
+export default function FormField({ label, type, validation }: FormFieldProps) {
   const { register /*errors*/ } = useContext(FormContext);
   //const error = errors[label];
 

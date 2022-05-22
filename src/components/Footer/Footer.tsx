@@ -10,7 +10,7 @@ export default function Footer() {
   const menuOptions = ["Home", "Headphones", "Speakers", "Earphones"];
   const history = useHistory();
   function handleClick(location) {
-    if (location !== "home") history.push("/" + location);
+    if (location !== "home") history.push("/category/" + location);
     else history.push("/");
   }
   return (

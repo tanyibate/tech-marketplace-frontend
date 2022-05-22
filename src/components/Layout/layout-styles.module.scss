@@ -9,6 +9,15 @@
   padding-top: 90px;
 }
 
+.login_padding {
+  padding-top: 96px;
+  padding-bottom: 6px;
+  @media screen and (min-width: 1024px) {
+    padding-top: 110px;
+    padding-bottom: 20px;
+  }
+}
+
 .header {
   top: -90px;
 }
@@ -19,4 +28,8 @@
 
 .gray_background {
   background-color: #f1f1f1;
+}
+
+.max_width {
+  max-width: 100% !important;
 }

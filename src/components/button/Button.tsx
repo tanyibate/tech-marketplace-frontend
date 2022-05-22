@@ -1,13 +1,20 @@
 import React from "react";
 
+export type ButtonProps = {
+  type?: "button" | "submit" | "reset";
+  clickHandler?: () => void;
+  fontColor: string;
+  backgroundColor: string;
+  children: React.ReactNode;
+};
+
 export default function Button({
-  title,
   type,
   clickHandler,
   fontColor,
   backgroundColor,
   children,
-}) {
+}: ButtonProps) {
   return (
     <button
       type={type}

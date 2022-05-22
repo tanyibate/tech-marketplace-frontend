@@ -1,9 +1,7 @@
 import React from "react";
 import Hero from "../../components/hero/Hero";
 import Layout from "../../components/Layout/Layout";
-import earphonesCategoryImage from "../../assets/images/image-earphones.png";
-import headphonesCategoryImage from "../../assets/images/image-headphones.png";
-import speakersCategoryImage from "../../assets/images/image-speakers.png";
+import categories from "../../utils/categories";
 import CategorySelector from "../../components/category-selector/CategorySelector";
 import zx9SpeakersHomeDesktop from "../../assets/images/home/desktop/image-speaker-zx9.png";
 import zx7SpeakerHomeDesktop from "../../assets/images/home/desktop/image-speaker-zx7.jpg";
@@ -20,20 +18,6 @@ import HomePageMiddleProduct from "../../components/home-page-middle-product/Hom
 import HomePageBottomProduct from "../../components/home-page-bottom-product/HomePageBottomProduct";
 
 export default function Home() {
-  const categories = [
-    {
-      name: "headphones",
-      image: headphonesCategoryImage,
-    },
-    {
-      name: "speakers",
-      image: speakersCategoryImage,
-    },
-    {
-      name: "earphones",
-      image: earphonesCategoryImage,
-    },
-  ];
   const isTablet = useMediaQuery({ query: "(min-width: 768px)" });
   const isDesktop = useMediaQuery({ query: "(min-width: 1440px)" });
   const isLarge = useMediaQuery({ query: "(min-width: 1024px)" });
@@ -61,15 +45,24 @@ export default function Home() {
           {...{
             image: zx9SpeakersHomeDesktop,
             name: "ZX9 SPEAKER",
+            url: "/product/zx9-speaker",
             description:
               "Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.",
           }}
         />
         <HomePageMiddleProduct
-          {...{ image: getMiddleProductImage(), name: "ZX7 SPEAKER" }}
+          {...{
+            image: getMiddleProductImage(),
+            name: "ZX7 SPEAKER",
+            url: "/product/zx7-speaker",
+          }}
         />
         <HomePageBottomProduct
-          {...{ image: getBottomProductImage(), name: "YX1 EARPHONES" }}
+          {...{
+            image: getBottomProductImage(),
+            name: "YX1 EARPHONES",
+            url: "/product/yx1-earphones",
+          }}
         />
       </div>
     </Layout>

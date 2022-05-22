@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function User() {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState({});
   useEffect(() => {
     axios
       .get("http://localhost:5000/api/v1/auth/user", {
@@ -14,7 +14,6 @@ export default function User() {
       })
       .catch((err) => {
         console.log(err);
-        setUser("No User could be found");
       });
   }, []);
   return <div>{}</div>;

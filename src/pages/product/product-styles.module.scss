@@ -70,6 +70,7 @@
   letter-spacing: 0px;
   text-align: left;
   opacity: 0.5;
+  white-space: pre-line;
 }
 
 .secondary_title {
@@ -99,5 +100,23 @@
     line-height: 36px;
     letter-spacing: 1.1428571939468384px;
     text-align: left;
+  }
+}
+
+.accessory {
+  display: flex;
+  column-gap: 24px;
+  .quantity {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 25px;
+    color: #d87d4a;
+  }
+  .item {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    color: #000000;
+    opacity: 0.5;
   }
 }
