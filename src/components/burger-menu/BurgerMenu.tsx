@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./burger-menu-styles.module.scss";
 import classNames from "classnames";
 import categories from "../../utils/categories";
 import CategorySelector from "../category-selector/CategorySelector";
 
-export default function BurgerMenu({ close }) {
-  const [menuClosed, setMenuClosed] = useState(false);
+export default function BurgerMenu({ disable, menuClosed, setMenuClosed }) {
   const classes = classNames({
-    [styles.slide_in]: menuClosed,
     [styles.mobile_menu]: true,
+    [styles.slide_out]: !menuClosed,
+    [styles.slide_in]: menuClosed,
   });
 
   const closeMenu = () => {
-    if (menuClosed) close();
+    if (menuClosed) {
+      disable();
+      setMenuClosed(false);
+    }
   };
 
   return (
@@ -22,7 +25,12 @@ export default function BurgerMenu({ close }) {
         onAnimationEnd={closeMenu}
       >
         {categories.map(({ name, image }) => (
-          <CategorySelector image={image} name={name} key={name} />
+          <CategorySelector
+            image={image}
+            name={name}
+            key={name}
+            clickHandler={disable}
+          />
         ))}
       </div>
     </div>

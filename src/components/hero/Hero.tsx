@@ -5,9 +5,11 @@ import Button from "../button/Button";
 import styles from "./hero.styles.module.scss";
 import React, { useState, useEffect } from "react";
 import arrowDown from "../../assets/icons/arrow-down.png";
+import { useHistory } from "react-router-dom";
 
 export default function Hero() {
   const [showArrow, setShowArrow] = useState(false);
+  const history = useHistory();
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowArrow(true);
@@ -39,7 +41,13 @@ export default function Hero() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Button backgroundColor="orange" fontColor="white">
+          <Button
+            backgroundColor="orange"
+            fontColor="white"
+            clickHandler={() =>
+              history.push("/product/xx99-mark-two-headphones")
+            }
+          >
             See product
           </Button>
         </div>

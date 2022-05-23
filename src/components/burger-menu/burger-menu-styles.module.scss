@@ -1,24 +1,28 @@
+.mobile_menu_container {
+  top: 90px;
+  left: 0;
+  position: fixed;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  .mobile_menu {
+    z-index: -5;
+    padding: 5%;
+    padding-top: 70px;
+    background-color: white;
+    width: 100%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}
+
 .slide_in {
   animation: slide-in 500ms linear forwards;
 }
 
-.mobile_menu_container {
-  top: 0;
-  left: 0;
-  position: fixed;
-  z-index: 5;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  padding-top: 90px;
-  .mobile_menu {
-    padding: 5%;
-    background-color: white;
-    width: 100%;
-    animation: slide-out 500ms linear forwards;
-  }
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+.slide_out {
+  animation: slide-out 500ms linear forwards;
 }
 
 @keyframes slide-in {

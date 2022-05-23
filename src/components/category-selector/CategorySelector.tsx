@@ -4,13 +4,24 @@ import { useQueryClient } from "react-query";
 
 import forwardChevron from "../../assets/icons/forward-chevron.png";
 
-export default function CategorySelector({ image, name }) {
+export type CategorySelectorProps = {
+  image: string;
+  name: string;
+  clickHandler?: () => void;
+};
+
+export default function CategorySelector({
+  image,
+  name,
+  clickHandler,
+}: CategorySelectorProps) {
   const history = useHistory();
   const queryClient = useQueryClient();
   return (
     <div
       className="rounded-lg bg-white-smoke w-full h-40 desktop:h-48 relative cursor-pointer text-black"
       onClick={() => {
+        if (clickHandler) clickHandler();
         history.push(`/category/${name}`);
         queryClient.invalidateQueries("categoryproductdata");
       }}
