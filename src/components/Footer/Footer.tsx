@@ -5,13 +5,18 @@ import facebookIcon from "../../assets/icons/icon-facebook.svg";
 import twitterIcon from "../../assets/icons/icon-twitter.svg";
 import styles from "./footer-styles.module.scss";
 import { useHistory } from "react-router-dom";
+import { useQueryClient } from "react-query";
 
 export default function Footer() {
   const menuOptions = ["Home", "Headphones", "Speakers", "Earphones"];
   const history = useHistory();
+  const queryClient = useQueryClient();
   function handleClick(location) {
-    if (location !== "home") history.push("/category/" + location);
-    else history.push("/");
+    if (location !== "home") {
+      console.log(location);
+      history.push("/category/" + location);
+      queryClient.invalidateQueries("categoryproductdata");
+    } else history.push("/");
   }
   return (
     <footer className="w-full bg-black pt-12 pb-9 px-6 tablet:px-8 flex flex-col items-center ">

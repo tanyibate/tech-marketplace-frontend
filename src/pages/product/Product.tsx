@@ -40,7 +40,6 @@ export default function Product() {
                 }
                 alt=""
                 className="w-full tablet:w-2/5 lg:w-1/2 rounded-xl"
-                onClick={() => console.log(productData.data)}
               />
               <div className="w-full tablet:w-3/5 lg:w-1/2 tablet:pl-24 lg:pl-28">
                 {productData.data.new && (
@@ -67,6 +66,35 @@ export default function Product() {
                     </div>
                   );
                 })}
+              </div>
+            </div>
+            <div className={styles.image_grid}>
+              <div>
+                <img
+                  src={
+                    process.env.REACT_APP_IMAGE_HOST_URL +
+                    getImageSize(productData.data.gallery[0])
+                  }
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  src={
+                    process.env.REACT_APP_IMAGE_HOST_URL +
+                    getImageSize(productData.data.gallery[1])
+                  }
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  src={
+                    process.env.REACT_APP_IMAGE_HOST_URL +
+                    getImageSize(productData.data.gallery[2])
+                  }
+                  alt=""
+                />
               </div>
             </div>
           </>

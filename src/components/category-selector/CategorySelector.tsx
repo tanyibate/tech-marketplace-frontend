@@ -1,15 +1,19 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { useQueryClient } from "react-query";
 
 import forwardChevron from "../../assets/icons/forward-chevron.png";
 
 export default function CategorySelector({ image, name }) {
   const history = useHistory();
-
+  const queryClient = useQueryClient();
   return (
     <div
       className="rounded-lg bg-white-smoke w-full h-40 desktop:h-48 relative cursor-pointer"
-      onClick={() => history.push(`/category/${name}`)}
+      onClick={() => {
+        history.push(`/category/${name}`);
+        queryClient.invalidateQueries("categoryproductdata");
+      }}
     >
       <img
         src={image}

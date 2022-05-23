@@ -22,4 +22,5 @@ export type Product = {
   updatedAt: string;
   categoryImage: Image;
   accessories?: Accessory[];
+  gallery: Image[];
 };
