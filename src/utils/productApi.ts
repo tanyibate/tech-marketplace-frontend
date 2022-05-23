@@ -16,6 +16,13 @@ export const getProductsByCategory = async (category) => {
   return result;
 };
 
+export const getOtherProducts = async (slug) => {
+  const result = await instance.get<Array<Product>>(
+    `${process.env.REACT_APP_BACKEND_API_URL}/products/other/${slug}`
+  );
+  return result;
+};
+
 export const getProductBySlug = async (slug) => {
   const result = await instance.get<Product>(
     `${process.env.REACT_APP_BACKEND_API_URL}/products/${slug}`

@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "../../components/hero/Hero";
-import Layout from "../../components/Layout/Layout";
+import Layout from "../../components/layout/Layout";
 import categories from "../../utils/categories";
 import CategorySelector from "../../components/category-selector/CategorySelector";
 import zx9SpeakersHomeDesktop from "../../assets/images/home/desktop/image-speaker-zx9.png";

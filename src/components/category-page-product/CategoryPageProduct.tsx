@@ -15,6 +15,8 @@ export default function CategoryPageProduct({
   const history = useHistory();
   const goToProduct = () => {
     queryClient.invalidateQueries("productpagedata");
+    queryClient.invalidateQueries("otherproductspagedata");
+
     history.push(`/product/${slug}`);
   };
   const imageSection = (

@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 import Form from "../../components/form/Form";
-import Layout from "../../components/Layout/Layout";
+import Layout from "../../components/layout/Layout";
 import Error from "./error";
 import Success from "./success";
 import { useForm } from "react-hook-form";

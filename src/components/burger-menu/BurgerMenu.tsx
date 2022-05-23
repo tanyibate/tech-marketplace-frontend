@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import styles from "./burger-menu-styles.module.scss";
 import classNames from "classnames";
+import categories from "../../utils/categories";
+import CategorySelector from "../category-selector/CategorySelector";
 
 export default function BurgerMenu({ close }) {
-  const menuOptions = ["Home", "Headphones", "Speakers", "Earphones"];
   const [menuClosed, setMenuClosed] = useState(false);
   const classes = classNames({
-    [styles.pulloutmenu]: menuClosed,
-    [styles.menu]: true,
+    [styles.slide_in]: menuClosed,
+    [styles.mobile_menu]: true,
   });
 
   const closeMenu = () => {
@@ -15,21 +16,15 @@ export default function BurgerMenu({ close }) {
   };
 
   return (
-    <aside className={classes} onAnimationEnd={closeMenu}>
-      {menuOptions.map((option) => (
-        <button
-          className="text-white hover:text-orange focus:text-orange font-bold cursor-pointer"
-          key={`burger_menu_${option}`}
-        >
-          {option}
-        </button>
-      ))}
-      <span
-        className="absolute right-2 top-2 cursor-pointer"
-        onClick={() => setMenuClosed(true)}
+    <div className={styles.mobile_menu_container}>
+      <div
+        className={`${classes} grid grid-cols-1 gap-y-16 w-full tablet:grid-cols-3 gap-x-10`}
+        onAnimationEnd={closeMenu}
       >
-        X
-      </span>
-    </aside>
+        {categories.map(({ name, image }) => (
+          <CategorySelector image={image} name={name} key={name} />
+        ))}
+      </div>
+    </div>
   );
 }

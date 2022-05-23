@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../../components/Layout/Layout";
+import Layout from "../../components/layout/Layout";
 import { useMediaQuery } from "react-responsive";
 import CategoryPageProduct from "../../components/category-page-product/CategoryPageProduct";
 import { useQuery } from "react-query";

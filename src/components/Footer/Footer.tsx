@@ -13,7 +13,6 @@ export default function Footer() {
   const queryClient = useQueryClient();
   function handleClick(location) {
     if (location !== "home") {
-      console.log(location);
       history.push("/category/" + location);
       queryClient.invalidateQueries("categoryproductdata");
     } else history.push("/");

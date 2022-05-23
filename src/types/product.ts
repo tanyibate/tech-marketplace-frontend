@@ -23,4 +23,5 @@ export type Product = {
   categoryImage: Image;
   accessories?: Accessory[];
   gallery: Image[];
+  otherImage: Image;
 };

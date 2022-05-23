@@ -9,7 +9,7 @@ export default function CategorySelector({ image, name }) {
   const queryClient = useQueryClient();
   return (
     <div
-      className="rounded-lg bg-white-smoke w-full h-40 desktop:h-48 relative cursor-pointer"
+      className="rounded-lg bg-white-smoke w-full h-40 desktop:h-48 relative cursor-pointer text-black"
       onClick={() => {
         history.push(`/category/${name}`);
         queryClient.invalidateQueries("categoryproductdata");

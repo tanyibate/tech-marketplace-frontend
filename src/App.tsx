@@ -2,11 +2,11 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./pages/login";
 import CategoryPage from "./pages/category-page/CategoryPage";
-import Home from "./pages/Home/Home";
+import Home from "./pages/home/Home";
 import React from "react";
 
-import NavBar from "./components/NavBar/NavBar";
-import Footer from "./components/Footer/Footer";
+import NavBar from "./components/navbar/NavBar";
+import Footer from "./components/footer/Footer";
 import BestAudioGear from "./components/best-audio-gear/BestAudioGear";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Product from "./pages/product/Product";

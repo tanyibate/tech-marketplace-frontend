@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Layout from "../../components/Layout/Layout";
+import Layout from "../../components/layout/Layout";
 import { getUser } from "../../utils/userMethods";
 import { login } from "../../store/actions/loginActions";
 import { useDispatch } from "react-redux";

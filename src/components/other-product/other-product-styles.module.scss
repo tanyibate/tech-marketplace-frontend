@@ -1,0 +1,32 @@
+.secondary_title {
+  font-family: Manrope;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 0.8571428656578064px;
+  text-align: left;
+
+  @media screen and (min-width: 768px) {
+    font-family: Manrope;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: 1.1428571939468384px;
+    text-align: left;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-family: Manrope;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: 1.1428571939468384px;
+    text-align: left;
+  }
+
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+}
