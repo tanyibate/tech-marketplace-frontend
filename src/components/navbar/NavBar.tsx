@@ -57,7 +57,7 @@ export default function NavBar() {
   const menuOptions = ["Home", "Headphones", "Speakers", "Earphones"];
 
   const classes = classNames({
-    "bg-black": pathname !== "/" || offset > 90,
+    "bg-black": pathname !== "/" || offset > 90 || burgerMenuActive,
   });
 
   return (

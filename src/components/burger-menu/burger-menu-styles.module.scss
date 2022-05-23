@@ -7,6 +7,7 @@
   width: 100%;
   background: rgba(0, 0, 0, 0.4);
   .mobile_menu {
+    transform: translateY(-100%);
     z-index: -5;
     padding: 5%;
     padding-top: 70px;
@@ -23,16 +24,20 @@
 
 .slide_out {
   animation: slide-out 500ms linear forwards;
+  animation-delay: 5ms;
 }
 
 @keyframes slide-in {
+  from {
+    transform: translateY(0%);
+  }
   to {
     transform: translateY(-100%);
   }
 }
 
 @keyframes slide-out {
-  from {
-    transform: translateY(-100%);
+  to {
+    transform: translateY(0%);
   }
 }
